@@ -16,6 +16,8 @@ Para usar o aplicativo **OutputPackagesCleaner**, siga estas etapas:
 
 3. Modifique o código do aplicativo para atender às suas necessidades específicas, se necessário.
 
+4. Compile o projeto e insira a pasta raiz da Solução que deseja apagar todas as pastas de saida.
+
 ## Observações
 
 - Este aplicativo pressupõe que você está usando o sistema operacional Windows.
