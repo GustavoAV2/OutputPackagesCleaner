@@ -34,6 +34,19 @@ namespace ClearSolutions.Services
             }
         }
 
+        private List<string> FindProjectsPath(string path)
+        {
+            List<string> paths = new List<string>();
+            foreach (string directoryPath in Directory.GetDirectories(path))
+            {
+                if (Directory.GetFiles(directoryPath, "*.csproj").Any())
+                {
+                    paths.Add(directoryPath);
+                }
+            }
+            return paths;
+        }
+        
         private void DeleteOutputFolders(string path)
         {
             try
@@ -48,19 +61,6 @@ namespace ClearSolutions.Services
             {
                 _logger.LogError(ex.Message);
             }
-        }
-
-        private List<string> FindProjectsPath(string path)
-        {
-            List<string> paths = new List<string>();
-            foreach (string acPath in Directory.GetDirectories(path))
-            {
-                if (Directory.GetFiles(acPath, "*.csproj").Any())
-                {
-                    paths.Add(acPath);
-                }
-            }
-            return paths;
         }
     }
 }
